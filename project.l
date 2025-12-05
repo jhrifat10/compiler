@@ -26,13 +26,25 @@ bitwise_op          (&|\||\^|>>|<<)
 
 
 
+
+
+%%
+
+{logical_op}        { printToken("Logical Operator", yytext); }
+{bitwise_op}        { printToken("Bitwise Operator", yytext); }
+{keyword}           { printToken("Keyword", yytext); }
+{integer}           { printToken("Number", yytext); }
+
+
+
+
+
+
 {math_op}           { printToken("Math Operator", yytext); }
 {ass_op}            { printToken("Assignment Operator", yytext); }
 {comp_op}           { printToken("Comparison Operator", yytext); }
 {unary_op}          { printToken("Unary Operator", yytext); }
 {assignment}        { printToken("Identifier Statement", yytext); }
-
-
 
 
 
