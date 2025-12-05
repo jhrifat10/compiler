@@ -32,6 +32,10 @@ elif_kw             elif
 else_kw             else
 for_kw              for
 while_kw            while
+func_kw             func
+print_kw            print
+return_kw           return
+skip_kw             (continue|break)
 
 %%
 
@@ -58,7 +62,9 @@ while_kw            while
 {else_kw}           { printToken("Else Keyword", yytext); }
 {for_kw}            { printToken("For Keyword", yytext); }
 {while_kw}          { printToken("While Keyword", yytext); }
-
+{func_kw}           { printToken("Function Keyword", yytext); }
+{print_kw}          { printToken("Print Keyword", yytext); }
+{return_kw}         { printToken("Return Keyword", yytext); }
 
 
 
