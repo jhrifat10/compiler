@@ -9,12 +9,17 @@ void printToken(const char* type, const char* value){
 
 %option noyywrap
 
+
 id                  [a-zA-Z][a-zA-Z_0-9]*
 keyword             (int|float|char|string|bool)
 integer             [+-]?[0-9]+
 number              ([+-]?[0-9]+([.][0-9]*)?(e[+-]?[0-9]*)?)
 string              \"[^\"\n]*\"
 binary              (true|false)
+
+logical_op          (and|or|xor|&&|\|)
+bitwise_op          (&|\||\^|>>|<<)
+
 
 
 {math_op}           { printToken("Math Operator", yytext); }
