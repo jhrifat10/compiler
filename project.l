@@ -50,6 +50,9 @@ skip_kw             (continue|break)
 {integer}           { printToken("Number", yytext); }
 
 
+{number}            { printToken("Number", yytext); }
+{string}            { printToken("String", yytext); }
+{binary}            { printToken("Boolean", yytext); }
 
 
 
