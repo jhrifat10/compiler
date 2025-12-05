@@ -17,6 +17,14 @@ string              \"[^\"\n]*\"
 binary              (true|false)
 
 
+{math_op}           { printToken("Math Operator", yytext); }
+{ass_op}            { printToken("Assignment Operator", yytext); }
+{comp_op}           { printToken("Comparison Operator", yytext); }
+{unary_op}          { printToken("Unary Operator", yytext); }
+{assignment}        { printToken("Identifier Statement", yytext); }
+
+
+
 
 
 
