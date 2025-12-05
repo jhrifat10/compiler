@@ -27,6 +27,11 @@ bitwise_op          (&|\||\^|>>|<<)
 
 
 
+if_kw               if
+elif_kw             elif
+else_kw             else
+for_kw              for
+while_kw            while
 
 %%
 
@@ -48,7 +53,11 @@ bitwise_op          (&|\||\^|>>|<<)
 
 
 
-
+{if_kw}             { printToken("If Keyword", yytext); }
+{elif_kw}           { printToken("Elif Keyword", yytext); }
+{else_kw}           { printToken("Else Keyword", yytext); }
+{for_kw}            { printToken("For Keyword", yytext); }
+{while_kw}          { printToken("While Keyword", yytext); }
 
 
 
