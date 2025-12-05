@@ -9,7 +9,6 @@ void printToken(const char* type, const char* value){
 
 %option noyywrap
 
-
 id                  [a-zA-Z][a-zA-Z_0-9]*
 keyword             (int|float|char|string|bool)
 integer             [+-]?[0-9]+
@@ -26,11 +25,6 @@ bitwise_op          (&|\||\^|>>|<<)
 
 unary_op            (({id}(--|\+\+))|((--|\+\+){id}))
 assignment          ({id}[ ]*{ass_op}[ ]*({id}|{number})([ ]*{math_op}[ ]*({id}|{number}))?)
-
-
-
-
-
 
 if_kw               if
 elif_kw             elif
@@ -55,15 +49,11 @@ skip_kw             (continue|break)
 {binary}            { printToken("Boolean", yytext); }
 
 
-
-
 {math_op}           { printToken("Math Operator", yytext); }
 {ass_op}            { printToken("Assignment Operator", yytext); }
 {comp_op}           { printToken("Comparison Operator", yytext); }
 {unary_op}          { printToken("Unary Operator", yytext); }
 {assignment}        { printToken("Identifier Statement", yytext); }
-
-
 
 {if_kw}             { printToken("If Keyword", yytext); }
 {elif_kw}           { printToken("Elif Keyword", yytext); }
@@ -73,14 +63,6 @@ skip_kw             (continue|break)
 {func_kw}           { printToken("Function Keyword", yytext); }
 {print_kw}          { printToken("Print Keyword", yytext); }
 {return_kw}         { printToken("Return Keyword", yytext); }
-
-
-
-
-
-
-
-
 {id}                { printToken("Identifier", yytext); }
 
 [ \t\r\n]+          { /* ignore whitespace */ }
