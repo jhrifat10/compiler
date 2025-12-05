@@ -17,6 +17,10 @@ number              ([+-]?[0-9]+([.][0-9]*)?(e[+-]?[0-9]*)?)
 string              \"[^\"\n]*\"
 binary              (true|false)
 
+math_op             [+\-*/%]
+ass_op              (\+=|\-=|\*=|\/=|%=|&=|\^=|<<=|>>=|=)
+comp_op             (==|!=|>=|<=|>|<)
+
 logical_op          (and|or|xor|&&|\|)
 bitwise_op          (&|\||\^|>>|<<)
 
