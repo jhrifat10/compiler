@@ -24,6 +24,11 @@ comp_op             (==|!=|>=|<=|>|<)
 logical_op          (and|or|xor|&&|\|)
 bitwise_op          (&|\||\^|>>|<<)
 
+unary_op            (({id}(--|\+\+))|((--|\+\+){id}))
+assignment          ({id}[ ]*{ass_op}[ ]*({id}|{number})([ ]*{math_op}[ ]*({id}|{number}))?)
+
+
+
 
 
 
