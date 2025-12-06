@@ -26,10 +26,3 @@ string message = "Hello world";
     z < x
   
     return 0;
-
-   
-
-
-
-
-Hello world 123 "abcd"(+ 
