@@ -14,6 +14,11 @@ string message = "Hello world";
     else
     x = y;
 
+    x+y
+    x-y
+    x*y
+    x/y
+
     x++;
     y--;
 
