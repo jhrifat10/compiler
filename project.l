@@ -49,7 +49,7 @@ skip_kw             (continue|break)
 {binary}            { printToken("Boolean", yytext); }
 
 
-{math_op}           { printToken("Arithmetic Operator", yytext); }
+{math_op}           { printToken("Math Operator", yytext); }
 {ass_op}            { printToken("Assignment Operator", yytext); }
 {comp_op}           { printToken("Comparison Operator", yytext); }
 {unary_op}          { printToken("Unary Operator", yytext); }
