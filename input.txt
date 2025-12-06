@@ -1,1 +1,35 @@
+int x = 10;
+x
+=
+10
+float y = 3.14;
+y 
+= 
+3.50
+char course = "Compiler_Design";
+string message = "Hello world";
+
+    if (x < y) 
+    x = x + 1;
+    else
+    x = y;
+
+    x++;
+    y--;
+
+    true;
+    false;
+     
+    x && y
+    x == y
+    y > z
+    z < x
+  
+    return 0;
+
+   
+
+
+
+
 Hello world 123 "abcd"(+ 
