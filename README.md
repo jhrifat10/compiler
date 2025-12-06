@@ -98,6 +98,42 @@ Token : Identifier Statement
 Input : ;
 Token : Unknown
 
+Input : x
+Token : Identifier
+
+Input : +
+Token : Math Operator
+
+Input : y
+Token : Identifier
+
+Input : x
+Token : Identifier
+
+Input : -
+Token : Math Operator
+
+Input : y
+Token : Identifier
+
+Input : x
+Token : Identifier
+
+Input : *
+Token : Math Operator
+
+Input : y
+Token : Identifier
+
+Input : x
+Token : Identifier
+
+Input : /
+Token : Math Operator
+
+Input : y
+Token : Identifier
+
 Input : x++
 Token : Unary Operator
 
