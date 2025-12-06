@@ -1,4 +1,49 @@
-**Output:**
+# 🎯Project Name: Lexical Analyzer Using Flex (Token Generator)
+
+---
+
+This project is a lexical analyzer based on Lex (Flex) that recognizes various token types from an input file. It recognizes strings, booleans, numbers, different types of operators, identifiers, and keywords.
+
+---
+
+# 🚀Features:
+The lexical analyzer can recognize:
+## Keywords
+- int, float, char, string, bool
+- if, elif, else
+- for, while
+- func, print, return
+- continue, break
+## Identifiers
+- Variable names like (x, y, course, message)
+## Numbers
+- 0,10
+- 3.14
+## Operators
+- Math/Arithmetic Operators: + - * / %
+- Assignment Operator: = += -= *= /= %= <<= etc.
+- Comparison Operator: == != > < >= <=
+- Logical Operator: &&
+- Bitwise Operator: & | ^ >> <<
+- Unary Operators: x++, y--, --x, y++
+## Strings
+- "Hello world"
+- "Compiler_Design"
+## Boolean
+- true, false
+## Identifier Statements
+- Identifier patterns like: int x = 10, x=x+1
+## Unknown Characters
+- Any unmatched symbol like , ( ) ; is printed as Unknown
+---
+
+
+
+
+
+
+# Output:
+
 Input : int
 Token : Keyword
 
