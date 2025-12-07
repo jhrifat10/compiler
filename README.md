@@ -32,230 +32,274 @@ The lexical analyzer can recognize:
 ## Boolean
 - true, false
 ## Identifier Statements
-- Identifier patterns like: int x = 10, x=x+1
+- Identifier patterns like: x = 10, x=x+1, x=y
 ## Unknown Characters
 - Any unmatched symbol like , ( ) ; is printed as Unknown
 ---
+# 📋Project Structure:
 
 
+```
+/Lex-Scanner
+|── lexer.l          # Lex/Flex source code
+│── input.txt        # Input test file
+│── README.md        # Documentation
+│── a.out / lex.yy.c # Auto-generated (after build)
 
+```
 
+ # 🛠️ Methodology How the Code Works
+- The methodology for this project describes the complete process used to design, develop, and test a lexical analyzer that identifies tokens such as keywords, identifiers, operators, numbers, and strings from an input source file.
 
+---
+## Functional Requirements
+- Read input program from a file (input.txt)
+- Identify and categorize tokens:
+- Whitespace ignoring
+- Display each token with its type
 
-# Output:
+# Implementation:
+## 1. Definitions Section (%)
+- Haderfile
+- Token regex patterns
+- Helper function printToken()
+
+## 2. Designing Token Patterns Regular Expression
+- Using Flex, each token type was defined using clear regex rules:
+```
+id          [a-zA-Z][a-zA-Z_0-9]*
+keyword     (int|float|char|string|bool)
+number      ([+-]?[0-9]+([.][0-9]*)?(e[+-]?[0-9]*)?)
+...
+```
+
+## 3. Flex Rules Section (%%)
+- Flex matches each line using rules
+- Each regex mapped to appropriate token printing
+```
+...
+{keyword}      printToken("Keyword", yytext);
+{math_op}      printToken("Math Operator", yytext);
+{string}       printToken("String", yytext);
+{id}           printToken("Identifier", yytext);
+.              printToken("Unknown", yytext);
+```
+## 4. User Code Section (Main)
+
+- open file input.txt, 
+- Call yylex() to start scanning runs scanner, exits.
+
+# Output Module:
 
 Input : int
-Token : Keyword
+- Token : Keyword
 
 Input : x = 10
-Token : Identifier Statement
+- Token : Identifier Statement
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : =
-Token : Assignment Operator
+- Token : Assignment Operator
 
 Input : 10
-Token : Number
+- Token : Number
 
 Input : float
-Token : Keyword
+- Token : Keyword
 
 Input : y = 3.14
-Token : Identifier Statement
+- Token : Identifier Statement
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : =
-Token : Assignment Operator
+- Token : Assignment Operator
 
 Input : 3.50
-Token : Number
+- Token : Number
 
 Input : char
-Token : Keyword
+- Token : Keyword
 
 Input : course
-Token : Identifier
+- Token : Identifier
 
 Input : =
-Token : Assignment Operator
+- Token : Assignment Operator
 
 Input : "Compiler_Design"
-Token : String
+- Token : String
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : string
-Token : Keyword
+- Token : Keyword
 
 Input : message
-Token : Identifier
+- Token : Identifier
 
 Input : =
-Token : Assignment Operator
+- Token : Assignment Operator
 
 Input : "Hello world"
-Token : String
+- Token : String
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : if
-Token : If Keyword
+- Token : If Keyword
 
 Input : (
-Token : Unknown
+- Token : Unknown
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : <
-Token : Comparison Operator
+- Token : Comparison Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : )
-Token : Unknown
+- Token : Unknown
 
 Input : x = x + 1
-Token : Identifier Statement
+- Token : Identifier Statement
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : else
-Token : Else Keyword
+- Token : Else Keyword
 
 Input : x = y
-Token : Identifier Statement
+- Token : Identifier Statement
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : +
-Token : Math Operator
+- Token : Math Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : -
-Token : Math Operator
+- Token : Math Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : *
-Token : Math Operator
+- Token : Math Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : /
-Token : Math Operator
+- Token : Math Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : x++
-Token : Unary Operator
+- Token : Unary Operator
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : y--
-Token : Unary Operator
+- Token : Unary Operator
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : true
-Token : Boolean
+- Token : Boolean
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : false
-Token : Boolean
+- Token : Boolean
 
 Input : ;
-Token : Unknown
+- Token : Unknown
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : &&
-Token : Logical Operator
+- Token : Logical Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : |
-Token : Logical Operator
-
-Input : |
-Token : Logical Operator
+- Token : Logical Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : ==
-Token : Comparison Operator
+- Token : Comparison Operator
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : y
-Token : Identifier
+- Token : Identifier
 
 Input : >
-Token : Comparison Operator
+- Token : Comparison Operator
 
 Input : z
-Token : Identifier
+- Token : Identifier
 
 Input : z
-Token : Identifier
+- Token : Identifier
 
 Input : <
-Token : Comparison Operator
+- Token : Comparison Operator
 
 Input : x
-Token : Identifier
+- Token : Identifier
 
 Input : return
-Token : Return Keyword
+- Token : Return Keyword
 
 Input : 0
-Token : Number
+- Token : Number
 
 Input : ;
-Token : Unknown
+- Token : Unknown
